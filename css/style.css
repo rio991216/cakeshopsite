@@ -400,6 +400,61 @@ p {
     /* 少しだけ透明にして押した感を強調 */
 }
 
+/* セクション全体の余白（上下80px、左右20px） */
+.p-menu {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+    /* 全体の最大幅を1500pxに制限 */
+}
+
+/* 背景色の出し分け */
+.p-menu__bg-01 {
+    background-color: var(--bg);
+}
+
+.p-menu__bg-02 {
+    background-color: var(--white);
+}
+
+/* Menu01: 見出し（c-heading）とコンテンツの間隔（50px） */
+#menu.p-menu {
+    gap: 50px;
+}
+
+/* 見出しを左寄せ */
+.c-heading {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* 内部コンテンツの配置設定（縦並び・間隔80px） */
+.p-menu__section,
+.p-menu__section--alter,
+[p-menu__section--alter] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+}
+
+/* 4つの画像を共通のサイズに固定 */
+.p-menu__img {
+    width: 100%;
+    max-width: 600px;
+    /* 横幅の最大サイズ（必要に応じて調整） */
+    aspect-ratio: 1 / 1;
+    /* 画像の比率を正方形(1:1)に統一（4/3 や 16/9 に調整も可能です） */
+    object-fit: cover;
+    /* 縦横比を崩さず、指定サイズいっぱいにトリミング表示 */
+    border-radius: 30px;
+    /* 角丸30px */
+}
+
 /* ==========================================================================
    PC用スタイル（画面幅768px以上）
    ========================================================================== */
@@ -510,6 +565,66 @@ p {
         flex-direction: row-reverse;
     }
 
+    /* ================
+       Menu部分
+       ================= */
+    /* セクション全体の余白設定（上下100px、左右90px / 最大幅1500px） */
+    .p-menu {
+        padding: 100px 90px;
+        max-width: 1500px;
+        margin: 0 auto;
+        /* 中央寄せ */
+        width: 100%;
+        box-sizing: border-box;
+    }
 
+    /* 見出し（c-heading）の下余白50px & 左寄せ */
+    .c-heading {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-bottom: 50px;
+    }
 
+    /* スマホ用CSSにあった #menu.p-menu のgap(50px)をクリア */
+    #menu.p-menu {
+        gap: 0;
+    }
+
+    /* メニューコンテンツ領域（ボタン上部＋画像左右のレイアウト設定） */
+    .p-menu__section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+    }
+
+    /* ボタンの親要素領域（幅100%確保 ＆ 下余白20px） */
+    .p-menu__section>.c-btn {
+        width: 100%;
+        margin-bottom: 20px;
+        /* ボタンの下の余白 20px */
+    }
+
+    /* ボタン本体のサイズは標準のまま固定（変形・引き伸ばしを防止） */
+    .c-btn--icon-link {
+        width: 280px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    /* 左右半分（50%ずつ）に画像を並べる設定 */
+    .p-menu__img {
+        width: calc(50% - 15px);
+        /* 50%から要素間の隙間(30px)の半分を差し引き */
+        max-width: none;
+        /* スマホ用の最大幅制限(600px)を解除 */
+        aspect-ratio: 1 / 1;
+        /* 正方形に統一 */
+        object-fit: cover;
+        /* 画像の歪みを防止 */
+    }
 }
