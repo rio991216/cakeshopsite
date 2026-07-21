@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* カラーコード設定変数（カスタムプロパティ） */
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --accent: #2F4644;
+    --bg: #E4D8CF;
+}
+
+/* ページ全体の基本スタイル */
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    /* 基本のフォント */
+    width: 100%;
+    max-width: 1500px;
+}
+
+/* 画像の表示設定（はみ出し防止） */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    color: var(--accent);
+}
+
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    color: var(--accent);
+}
+
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    color: var(--accent);
+}
+
+p {
+    font-family: "Noto Sans JP", serif;
+}
+
+/* ==========================================================================
+   ヘッダー＆ハンバーガーメニューの基本スタイル
+   ========================================================================== */
+
+/* ヘッダー全体のスタイル */
+.l-header {
+    background-color: var(--accent);
+    color: var(--white);
+    position: fixed;
+    /* 画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    max-width: 1500px;
+}
+
+/* ヘッダーの内側（ロゴとボタンを両端に配置） */
+.l-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    /* ヘッダーの高さ */
+    padding: 0 20px;
+}
+
+/* ロゴのスタイル */
+.l-header__logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.l-header__logo a {
+    color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   チェックボックスと三本線ボタン
+   -------------------------------------------------------------------------- */
+
+/* チェックボックス本体は非表示にする */
+.l-header__menu-toggle {
+    display: none;
+}
+
+/* ハンバーガーボタン（label） */
+.l-header__nav-btn {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 110;
+    /* メニューが広がっても上に乗るように調整 */
+    display: flex;
+    align-items: center;
+}
+
+/* 三本線の基本スタイル（真ん中の線） */
+.l-header__nav-btn span,
+.l-header__nav-btn span::before,
+.l-header__nav-btn span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    /* アニメーションを滑らかに */
+}
+
+/* 上下の線を配置 */
+.l-header__nav-btn span::before {
+    top: -8px;
+}
+
+.l-header__nav-btn span::after {
+    top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   チェック時の三本線アニメーション（バツ印へ変化）
+   -------------------------------------------------------------------------- */
+
+/* チェックが入ったら真ん中の線を透明にする */
+.l-header__menu-toggle:checked~.l-header__nav-btn span {
+    background-color: transparent;
+}
+
+/* 上の線を45度回転 */
+.l-header__menu-toggle:checked~.l-header__nav-btn span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+/* 下の線をマイナス45度回転 */
+.l-header__menu-toggle:checked~.l-header__nav-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   スライドメニュー（ナビゲーション領域）
+   -------------------------------------------------------------------------- */
+
+/* メニューの初期状態（非表示・少し上に隠す） */
+.l-header__nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 50%;
+    height: 60vh;
+    /* 画面に表示されるの高さ */
+    background-color: var(--accent);
+    padding-top: 20px;
+    /* ヘッダーやボタンに被らないよう余白を確保 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    /* 上から少し落ちてくるエフェクト用 */
+    transition: all 0.4s ease;
+    z-index: 105;
+}
+
+/* チェックが入ったらメニューを表示 */
+.l-header__menu-toggle:checked~.l-header__nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ナビゲーションリストのレイアウト */
+.l-header__nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* メニュー項目同士の間隔 */
+}
+
+/* メニュー内のリンク用スタイル */
+.l-header__nav-item a {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-family: "Noto Sans JP", serif;
+    letter-spacing: 0.1em;
+    display: block;
+    padding: 10px 20px;
+    transition: opacity 0.3s ease;
+}
+
+.l-header__nav-item a:hover {
+    opacity: 0.7;
+}
+
+
+
+/* ==========================================================================
+   MVの基本スタイル
+   ========================================================================== */
+/*==========================
+  メインビジュアル
+==========================*/
+.p-mv {
+    background: url("../image/mv_1.png") center center / cover no-repeat;
+
+    padding: 50px 20px;
+    min-height: 700px;
+    max-width: 1500px;
+
+    display: flex;
+    justify-content: center;
+    /* 横中央 */
+    align-items: center;
+    /* 縦中央 */
+    box-sizing: border-box;
+}
+
+.p-mv__inner {
+    width: 100%;
+    max-width: 800px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    /* 半透明の白 */
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    /* ガラス風 */
+    /* backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); */
+}
+
+.p-mv__inner-title {
+    /* 極小画面では自動縮小し、最大で48pxになるよう調整（はみ出し対策） */
+    font-size: clamp(32px, 11vw, 48px);
+    /* 英単語が枠を突き抜けるのを防ぐ保険 */
+    word-break: break-all;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* タイトルの改行 */
+.p-mv__inner-title-sp-only-br {
+    display: inline;
+}
+
+.p-mv__inner-text {
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* テキストの改行 */
+.p-mv__inner-text-sp-only-br {
+    display: inline;
+}
+
+
+/* =========================================
+   Aboutセクションのスタイル
+========================================= */
+
+/* 共通の大枠スタイル */
+.p-about {
+    /* 上下80px 左右20pxのpadding */
+    padding: 80px 20px;
+
+    /* 見出しとセクションの間隔を80pxにする */
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* 背景色の出し分け（追加したクラスで設定） */
+.p-about__bg-01 {
+    background-color: var(--white);
+}
+
+.p-about__bg-02 {
+    background-color: var(--bg);
+}
+
+/* 各セクション内のレイアウト */
+.p-about__section {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    /* 大画像とサブセクション(テキスト＋小画像)の間隔を80pxに設定 */
+}
+
+/* テキストと小画像のレイアウト */
+.p-about__subsection,
+.p-about__subsection--alter {
+    display: flex;
+    flex-direction: column;
+    /* HTMLの記述通り（大画像→テキスト→小画像）の順番で表示 */
+    gap: 80px;
+    /* テキストと小画像の間隔を80pxに設定 */
+}
+
+/* 画像の共通スタイル（拡大縮小・角丸） */
+.p-about__img--large,
+.p-about__img--small {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* 画像の縦横比を保ったまま綺麗に収める */
+    border-radius: 30px;
+    /* ★画像の四隅を30px丸める */
+}
+
+/* ==========================================================================
+   PC用スタイル（画面幅768px以上）
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+
+    /* =============
+       ヘッダー部分
+       ============= */
+    /* ハンバーガーボタン（三本線）を非表示にする */
+    .l-header__nav-btn {
+        display: none;
+    }
+
+    /* ナビゲーション領域をヘッダー内の正しい位置（ロゴの右側）に戻す */
+    .l-header__nav {
+        position: static;
+        /* スマホ用の画面固定（fixed）を解除 */
+        width: auto;
+        /* 幅50%を解除 */
+        height: auto;
+        /* 高さ60vhを解除 */
+        padding-top: 0;
+        /* Aboutが消える原因だった上の余白100pxをリセット */
+        opacity: 1;
+        /* 常に表示（透明度を戻す） */
+        visibility: visible;
+        /* 常に表示 */
+        transform: none;
+        /* スマホ用のアニメーション移動を解除 */
+        background-color: transparent;
+        /* ヘッダーと同色なので透明にして馴染ませる */
+    }
+
+    /* リストを縦並びから横並びに変更する */
+    .l-header__nav-list {
+        flex-direction: row;
+        /* column（縦）からrow（横）へ変更 */
+        gap: 20px;
+        /* メニュー項目間の余白（お好みで調整してください） */
+    }
+
+    /* PC用に文字サイズや余白の微調整 */
+    .l-header__nav-item a {
+        font-size: 1rem;
+        /* PC用に少し文字を小さく調整 */
+        padding: 5px 10px;
+        /* クリックエリアの調整 */
+    }
+
+    /* =============
+       MV部分
+       ============= */
+
+    /* タイトルの改行とる */
+    .p-mv__inner-title-sp-only-br {
+        display: none;
+    }
+
+    /* テキストの改行とる */
+    .p-mv__inner-text-sp-only-br {
+        display: none;
+    }
+
+
+    /* ================
+       About部分
+       ================= */
+    /* セクション全体の余白を変更 */
+    .p-about {
+        padding: 100px 90px;
+        /* 上下100px 左右90px */
+        gap: 50px;
+        /* 見出し(h3)とセクションの間隔を50pxに設定 */
+    }
+
+    /* 2カラム（左右半分）のレイアウト設定 */
+    .p-about__section {
+        flex-direction: row;
+        align-items: stretch;
+        /* ★左右のカラムの高さを揃える（等高） */
+        gap: 60px;
+        /* 左右カラム間の余白 */
+    }
+
+    /* 左側（または右側）の大画像 */
+    .p-about__img--large {
+        width: calc(50% - 30px);
+        /* カラム幅50%（gapの半分を引いたサイズ） */
+        height: 100%;
+        /* ★反対側の高さに合わせて縦いっぱいに伸ばす */
+        object-fit: cover;
+        /* ★縦横比を維持したまま綺麗に収める */
+    }
+
+    /* 右側（または左側）のテキストと小画像のブロック */
+    .p-about__subsection,
+    .p-about__subsection--alter {
+        width: calc(50% - 30px);
+        /* カラム幅50% */
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        /* 【１】テキスト と 【２】小画像 の間隔を90pxに設定 */
+    }
+
+    /* About02の配置変更（画像を右、テキスト群を左） */
+    .p-about__bg-02 .p-about__section {
+        flex-direction: row-reverse;
+    }
+
+
+
+}

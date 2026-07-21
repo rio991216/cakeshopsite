@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横浜のスイーツショップ Patisserie Yokohama Bay</title>
+
+    <!-- Normalize.css(リセットcss) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fontsの接続を最適化するコード（共通） -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+
+    <!-- 1. Cormorant Garamond -->
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- 2. Noto Sans JP -->
+    <link href="https://googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- 3. Playfair Display -->
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="l-header">
+        <div class="l-header__inner">
+            <h1 class="l-header__logo"><a href="#">Patisserie Yokohama Bay</a>
+            </h1>
+
+            <!-- ハンバーガーメニュー用のチェックボックス -->
+            <input type="checkbox" id="menu-toggle" class="l-header__menu-toggle">
+            <label for="menu-toggle" class="l-header__nav-btn">
+                <span></span>
+            </label>
+
+            <nav class="l-header__nav">
+                <ul class="l-header__nav-list">
+                    <li class="l-header__nav-item"><a href="#about">About</a></li>
+                    <li class="l-header__nav-item"><a href="#gallery">Gallery</a></li>
+                    <li class="l-header__nav-item"><a href="#menu">Menu</a></li>
+                    <li class="l-header__nav-item"><a href="#access">Access</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- メインビジュアル -->
+        <section class="p-mv">
+            <div class="p-mv__inner">
+                <h2 class="p-mv__inner-title">Patisserie<br class="p-mv__inner-title-sp-only-br"> Yokohama Bay</h2>
+                <p class="p-mv__inner-text">
+                    窓の外には横浜の特等席。<br class="p-mv__inner-text-sp-only-br">テーブルの上には職人が紡ぐ至高のスイーツを。
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- About01 -->
+        <section id="about" class="p-about p-about__bg-01">
+            <h3 class="c-heading">About</h3>
+            <div class="p-about__section">
+                <img class="p-about__img--large" src="image/about01_1.png" alt="ベリータルト">
+
+                <div class="p-about__subsection">
+                    <p class="p-about__text">
+                        洗練された横浜の景色を眺めながら、旬のフルーツを贅沢にあしらった極上スイーツで特別なひととき。
+                    </p>
+                    <img class="p-about__img--small" src="image/about01_2.png" alt="ショートケーキ">
+                </div>
+            </div>
+        </section>
+
+        <!-- About02 -->
+        <section class="p-about p-about__bg-02">
+            <div class="p-about__section">
+                <img class="p-about__img--large" src="image/about02_2.png" alt="シェフ">
+                <div class="p-about__subsection--alter">
+                    <p class="p-about__text">
+                        厳選した極上の素材と職人の繊細な技で、一口ごとに感動が広がる美しい仕上がりにこだわっています。
+                    </p>
+                    <img class="p-about__img--small" src="image/about02_1.png" alt="ケーキ材料">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="p-gallery">
+            <h3 class="c-heading">Gallery</h3>
+            <div class="p-gallery__section js-carousel">
+                <img class="p-gallery__img js-carousel__img " src="image/gallery02_1.png" alt="店の入り口">
+                <img class="p-gallery__img js-carousel__img " src="image/gallery02_2.png" alt="ショートケーキ">
+                <img class="p-gallery__img js-carousel__img " src="image/gallery02_3.png" alt="街の風景">
+                <img class="p-gallery__img js-carousel__img " src="image/gallery02_4.png" alt="デコレーションケーキ">
+                <img class="p-gallery__img js-carousel__img " src="image/gallery02_5.png" alt="ショーケース">
+            </div>
+        </section>
+
+        <!-- Menu01 -->
+        <section id="menu">
+            <h3 class="c-heading">Menu</h3>
+            <div>
+                <a href="#" class="ダミー">EAT IN Menu</a>
+                <img src="image/gallery01_1.png" alt="イートイン">
+                <img src="image/gallery01_2.png" alt="イチゴショート">
+            </div>
+        </section>
+
+        <!-- Menu02 -->
+        <section>
+            <div>
+                <a href="#" class="ダミー">TAKE OUT Menu</a>
+                <img src="image/gallery03_1.png" alt="イートイン">
+                <img src="image/gallery03_2.png" alt="イチゴショート">
+            </div>
+        </section>
+    </main>
+
+    <!-- Access -->
+    <footer id="access">
+        <div>
+            <div>
+                <div>営業時間</div>
+                <div>10:00-22:00</div>
+
+                <div>定休日</div>
+                <div>年中無休</div>
+
+                <div>電話番号</div>
+                <div>045-000-0000</div>
+
+                <div>住所</div>
+                <div>横浜市西区みなとみらい0丁目</div>
+
+                <img src="image/footer_1.png" alt="周辺環境">
+            </div>
+            <!-- Googleマップの挿入 -->
+            <div class="shop-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5960.215746477581!2d139.63217834393706!3d35.4589927022197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1784178435960!5m2!1sja!2sjp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
