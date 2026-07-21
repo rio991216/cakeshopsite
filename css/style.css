@@ -339,6 +339,67 @@ p {
     /* ★画像の四隅を30px丸める */
 }
 
+/* =========================================
+   Menuセクションのスタイル
+========================================= */
+
+/* ボタンの外枠 */
+.c-btn {
+    display: inline-block;
+}
+
+/* ボタン本体（リンク要素） */
+.c-btn--icon-link {
+    /* サイズと配置 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* テキストとアイコンの間隔 */
+    width: 280px;
+    height: 70px;
+    box-sizing: border-box;
+
+    /* 角丸 */
+    border-radius: 50px;
+
+    /* フォント指定 */
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+
+    /* カラー指定（通常時） */
+    color: var(--white);
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+
+    /* アニメーションのスピード（少し速めにすると押し心地が良いです） */
+    transition: all 0.15s ease-out;
+}
+
+/* SVGアイコンのサイズ・整列 */
+.c-btn--icon {
+    width: 1.2em;
+    height: 1.2em;
+    flex-shrink: 0;
+}
+
+/* ホバー時のスタイル */
+.c-btn--icon-link:hover {
+    color: var(--accent);
+    background-color: var(--white);
+    border-color: var(--accent);
+}
+
+/* クリック（押し込んだ）時の動作 */
+.c-btn--icon-link:active {
+    transform: scale(0.97);
+    /* 97%の大きさに少しキュッと縮む */
+    opacity: 0.9;
+    /* 少しだけ透明にして押した感を強調 */
+}
+
 /* ==========================================================================
    PC用スタイル（画面幅768px以上）
    ========================================================================== */
