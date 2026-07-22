@@ -514,9 +514,11 @@ p {
 /* 【３】画像部分（HTMLの修正により自動的にリストの下に配置されます） */
 .l-footer__img {
     width: 100%;
-    max-width: 400px;
-    /* 必要に応じて最大幅を設定してください */
-    height: auto;
+    /* max-width: 400px; を削除します */
+    aspect-ratio: 4 / 3;
+    /* マップと同じ「横4：縦3」の比率に設定 */
+    object-fit: cover;
+    /* 画像が歪まないように枠に合わせてトリミング */
 }
 
 /* 【４】マップ部分 */
@@ -713,50 +715,46 @@ p {
         object-fit: cover;
         /* 画像の歪みを防止 */
     }
-}
 
-/* =============
+
+    /* =============
        フッター部分
        ============= */
 
-/* 【６】paddingの変更 */
-.l-footer {
-    padding: 100px 90px 50px;
-    gap: 0;
-    /* PC版では個別にマージンを設定するためリセット */
-}
+    /* 【６】paddingの変更 */
+    .l-footer {
+        padding: 100px 90px 50px;
+        gap: 0;
+        /* PC版では個別にマージンを設定するためリセット */
+    }
 
-/* 【７】【８】【９】画面左側と右側の横並びレイアウト */
-.l-footer__info {
-    flex-direction: row;
-    /* 横並びにする */
-    justify-content: space-between;
-    /* 左右に振り分ける */
-    align-items: stretch;
-    /* 【９】左右の高さを合わせる */
-    gap: 40px;
-    /* 左右の余白 */
-}
+    /* 【７】【８】【９】画面左側と右側の横並びレイアウト */
+    .l-footer__info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 20px;
+        /* ★ここを 40px から 20px に狭くする（お好みで変更可） */
+    }
 
-/* 左側のコンテンツ（リストと画像） */
-.l-footer__info-left {
-    width: 50%;
-    /* 左半分の幅 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* リストと画像を上下に程よく散らす場合は指定 */
-}
+    /* 左側のコンテンツ（リストと画像） */
+    .l-footer__info-left {
+        width: calc(50% - 10px);
+        /* ★隙間(20px)の半分を引いてピッタリ収める */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-/* 右側のコンテンツ（マップ） */
-.l-footer__map {
-    width: 50%;
-    /* 右半分の幅 */
-    aspect-ratio: auto;
-    /* スマホ時の比率をリセット */
-}
+    /* 右側のコンテンツ（マップ） */
+    .l-footer__map {
+        width: calc(50% - 10px);
+        /* ★隙間(20px)の半分を引いてピッタリ収める */
+        aspect-ratio: auto;
+    }
 
-/* 【10】コピーライトを最下部センター、上のコンテンツと50px間隔 */
-.l-footer__copyright {
-    margin-top: 50px;
+    /* 【10】コピーライトを最下部センター、上のコンテンツと50px間隔 */
+    .l-footer__copyright {
+        margin-top: 50px;
+    }
 }
