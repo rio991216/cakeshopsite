@@ -455,6 +455,92 @@ p {
     /* 角丸30px */
 }
 
+/* =========================================
+   フッターのスタイル
+========================================= */
+
+/* 【１】footer部分 */
+.l-footer {
+    padding: 50px 20px;
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* footer内の要素間の余白 */
+}
+
+/* スマホ表示では縦並び */
+.l-footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* リスト・画像グループ と マップ の間隔 */
+}
+
+/* 左側ラッパー（スマホ時は上下に並ぶ） */
+.l-footer__info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* リストと画像の間の間隔 */
+}
+
+/* 【２】リスト部分 */
+.l-footer__info-list {
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--white);
+    margin: 0;
+
+    /* Gridを使って2列にする（左が項目、右が内容） */
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    /* 左側は文字の長さに合わせ、右側は残り全幅 */
+    column-gap: 20px;
+    /* 項目と内容の間の左右の隙間 */
+    row-gap: 15px;
+    /* 上下の行の隙間 */
+    align-items: start;
+    /* Topの位置を揃える */
+}
+
+.l-footer__info-item-title,
+.l-footer__info-item-content {
+    margin: 0;
+    text-align: left;
+    /* 左揃え */
+    line-height: 1.6;
+}
+
+/* 【３】画像部分（HTMLの修正により自動的にリストの下に配置されます） */
+.l-footer__img {
+    width: 100%;
+    max-width: 400px;
+    /* 必要に応じて最大幅を設定してください */
+    height: auto;
+}
+
+/* 【４】マップ部分 */
+.l-footer__map {
+    width: 100%;
+    /* スマホ表示時のマップの縦横比を確保 */
+    aspect-ratio: 4 / 3;
+}
+
+.l-footer__map iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 【５】コピーライト部分 */
+.l-footer__copyright {
+    display: block;
+    text-align: center;
+    color: var(--white);
+    /* 背景に合わせて文字色を指定 */
+}
+
+
 /* ==========================================================================
    PC用スタイル（画面幅768px以上）
    ========================================================================== */
@@ -627,4 +713,50 @@ p {
         object-fit: cover;
         /* 画像の歪みを防止 */
     }
+}
+
+/* =============
+       フッター部分
+       ============= */
+
+/* 【６】paddingの変更 */
+.l-footer {
+    padding: 100px 90px 50px;
+    gap: 0;
+    /* PC版では個別にマージンを設定するためリセット */
+}
+
+/* 【７】【８】【９】画面左側と右側の横並びレイアウト */
+.l-footer__info {
+    flex-direction: row;
+    /* 横並びにする */
+    justify-content: space-between;
+    /* 左右に振り分ける */
+    align-items: stretch;
+    /* 【９】左右の高さを合わせる */
+    gap: 40px;
+    /* 左右の余白 */
+}
+
+/* 左側のコンテンツ（リストと画像） */
+.l-footer__info-left {
+    width: 50%;
+    /* 左半分の幅 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* リストと画像を上下に程よく散らす場合は指定 */
+}
+
+/* 右側のコンテンツ（マップ） */
+.l-footer__map {
+    width: 50%;
+    /* 右半分の幅 */
+    aspect-ratio: auto;
+    /* スマホ時の比率をリセット */
+}
+
+/* 【10】コピーライトを最下部センター、上のコンテンツと50px間隔 */
+.l-footer__copyright {
+    margin-top: 50px;
 }

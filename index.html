@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>横浜のスイーツショップ Patisserie Yokohama Bay</title>
+    <title>横浜のスイーツショップ Pâtisserie Yokohama Bay</title>
 
     <!-- Normalize.css(リセットcss) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -32,7 +32,7 @@
 <body>
     <header class="l-header">
         <div class="l-header__inner">
-            <h1 class="l-header__logo"><a href="#">Patisserie Yokohama Bay</a>
+            <h1 class="l-header__logo"><a href="#">Pâtisserie Yokohama Bay</a>
             </h1>
 
             <!-- ハンバーガーメニュー用のチェックボックス -->
@@ -148,21 +148,27 @@
     <!-- Access -->
     <footer id="access" class="l-footer">
         <div class="l-footer__info">
-            <div class="l-footer__info-list">
-                <div class="l-footer__info-item-title">営業時間</div>
-                <div class="l-footer__info-item-content">10:00-22:00</div>
 
-                <div class="l-footer__info-item-title">定休日</div>
-                <div class="l-footer__info-item-content">年中無休</div>
+            <div class="l-footer__info-left">
 
-                <div class="l-footer__info-item-title">電話番号</div>
-                <div class="l-footer__info-item-content">045-000-0000</div>
+                <dl class="l-footer__info-list">
+                    <dt class="l-footer__info-item-title">営業時間</dt>
+                    <dd class="l-footer__info-item-content">10:00-22:00</dd>
 
-                <div class="l-footer__info-item-title">住所</div>
-                <div class="l-footer__info-item-content">横浜市西区みなとみらい0丁目</div>
+                    <dt class="l-footer__info-item-title">定休日</dt>
+                    <dd class="l-footer__info-item-content">年中無休</dd>
+
+                    <dt class="l-footer__info-item-title">電話番号</dt>
+                    <dd class="l-footer__info-item-content">045-000-0000</dd>
+
+                    <dt class="l-footer__info-item-title">住所</dt>
+                    <dd class="l-footer__info-item-content">横浜市西区みなとみらい0丁目</dd>
+                </dl>
 
                 <img class="l-footer__img" src="image/footer_1.png" alt="周辺環境">
+
             </div>
+
             <!-- Googleマップの挿入 -->
             <div class="l-footer__map">
                 <iframe
@@ -171,6 +177,7 @@
                     referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </div>
+
         <small class="l-footer__copyright">
             © Pâtisserie Yokohama Bay All Rights Reserved.
         </small>
