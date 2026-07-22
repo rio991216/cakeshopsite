@@ -461,7 +461,7 @@ p {
 
 /* 【１】footer部分 */
 .l-footer {
-    padding: 50px 20px;
+    padding: 70px 20px 50px;
     background-color: var(--accent);
     display: flex;
     flex-direction: column;
