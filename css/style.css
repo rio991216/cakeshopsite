@@ -372,11 +372,14 @@ p {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0;
-    /* 画像をピッタリくっつける（隙間が欲しい場合は後述） */
+    /* 画像をピッタリくっつける */
 
-    /* ★5秒かけて左へ移動する無限ループアニメーション */
-    /* 速度を変えたい場合は 5s の数値を変更してください */
-    animation: loop-carousel 5s linear infinite;
+    /*子要素（全画像）の合計幅まで親要素を無理やり広げる */
+    width: max-content;
+
+    /* ★30秒かけて左へ移動する無限ループアニメーション */
+    /* 速度を変えたい場合は、30s の数値を変更してください */
+    animation: loop-carousel 30s linear infinite;
 }
 
 /* ★ホバー時にアニメーションを一時停止（お好みで削除可能） */
