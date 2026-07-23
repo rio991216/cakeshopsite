@@ -340,6 +340,54 @@ p {
 }
 
 /* =========================================
+   Galleryのスタイル
+========================================= */
+/* セクション全体の余白（上下80px、左右20px） */
+.p-gallery {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1500px;
+    /* 全体の最大幅を1500pxに制限 */
+    background-color: var(--white);
+}
+
+.p-gallery__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* 見出しを左寄せ */
+.c-heading {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* 画像を共通のサイズに固定 */
+.p-gallery__img {
+    width: 100%;
+    max-width: 600px;
+    /* 横幅の最大サイズ（必要に応じて調整） */
+    aspect-ratio: 1 / 1;
+    /* 画像の比率を正方形(1:1)に統一（4/3 や 16/9 に調整も可能です） */
+    object-fit: cover;
+    /* 縦横比を崩さず、指定サイズいっぱいにトリミング表示 */
+
+}
+
+.p-gallery__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+/* =========================================
    Menuセクションのスタイル
 ========================================= */
 
@@ -652,6 +700,20 @@ p {
     .p-about__bg-02 .p-about__section {
         flex-direction: row-reverse;
     }
+
+
+    /* ================
+       Gallery部分
+       ================= */
+    /* セクション全体の余白（上下80px、左右20px） */
+    .p-gallery__section {
+        padding: 100px 90px;
+        display: flex;
+        max-width: 1500px;
+        /* 全体の最大幅を1500pxに制限 */
+
+    }
+
 
     /* ================
        Menu部分
