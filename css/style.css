@@ -383,9 +383,9 @@ p {
 }
 
 /* ★ホバー時にアニメーションを一時停止（お好みで削除可能） */
-.p-gallery__section:hover {
+/* .p-gallery__section:hover {
     animation-play-state: paused;
-}
+} */
 
 /* 画像共通設定（SP版: 1画面に1枚） */
 .p-gallery__img {
