@@ -342,50 +342,74 @@ p {
 /* =========================================
    Galleryのスタイル
 ========================================= */
-/* セクション全体の余白（上下80px、左右20px） */
+/* セクション全体（コンテナ） */
 .p-gallery {
     padding: 80px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+    /* 中央に配置 */
+    background-color: var(--white);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    max-width: 1500px;
-    /* 全体の最大幅を1500pxに制限 */
-    background-color: var(--white);
+
+    /* ★必須：画面外にはみ出たカルーセル画像を隠す */
+    overflow: hidden;
 }
 
-.p-gallery__section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 10px;
-}
-
-/* 見出しを左寄せ */
+/* 見出し */
 .c-heading {
     width: 100%;
     max-width: 600px;
     text-align: left;
 }
 
-/* 画像を共通のサイズに固定 */
-.p-gallery__img {
-    width: 100%;
-    max-width: 600px;
-    /* 横幅の最大サイズ（必要に応じて調整） */
-    aspect-ratio: 1 / 1;
-    /* 画像の比率を正方形(1:1)に統一（4/3 や 16/9 に調整も可能です） */
-    object-fit: cover;
-    /* 縦横比を崩さず、指定サイズいっぱいにトリミング表示 */
-
-}
-
+/* カルーセルのトラック（動く部分） */
 .p-gallery__section {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0;
+    /* 画像をピッタリくっつける（隙間が欲しい場合は後述） */
+
+    /* ★5秒かけて左へ移動する無限ループアニメーション */
+    /* 速度を変えたい場合は 5s の数値を変更してください */
+    animation: loop-carousel 5s linear infinite;
 }
 
+/* ★ホバー時にアニメーションを一時停止（お好みで削除可能） */
+.p-gallery__section:hover {
+    animation-play-state: paused;
+}
+
+/* 画像共通設定（SP版: 1画面に1枚） */
+.p-gallery__img {
+    /* コンテナの左右padding(20px + 20px = 40px)を引いた幅 = ぴったり1枚分 */
+    width: calc(100vw - 40px);
+    max-width: calc(1500px - 40px);
+    /* 全体幅が1500pxで止まる時の対策 */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* flex内で画像が潰れないようにする */
+}
+
+/* =========================================
+   アニメーションキーフレーム
+========================================= */
+@keyframes loop-carousel {
+    0% {
+        transform: translateX(0);
+        /* 最初は0%位置から */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* JSで2倍にした要素の半分まで移動してループ */
+    }
+}
 
 /* =========================================
    Menuセクションのスタイル
@@ -705,13 +729,16 @@ p {
     /* ================
        Gallery部分
        ================= */
-    /* セクション全体の余白（上下80px、左右20px） */
-    .p-gallery__section {
+    .p-gallery {
+        /* PC版の全体の余白 */
         padding: 100px 90px;
-        display: flex;
-        max-width: 1500px;
-        /* 全体の最大幅を1500pxに制限 */
+    }
 
+    /* PC版: 1画面に3枚 */
+    .p-gallery__img {
+        /* コンテナの左右padding(90px + 90px = 180px)を引いて、3等分する */
+        width: calc((100vw - 180px) / 3);
+        max-width: calc((1500px - 180px) / 3);
     }
 
 

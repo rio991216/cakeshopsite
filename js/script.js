@@ -21,3 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// ーーーーーーーーーーーーーー
+// Galleryカルーセル
+// ーーーーーーーーーーーーーーーー
+document.addEventListener("DOMContentLoaded", () => {
+    // カルーセルの親要素を取得
+    const carousel = document.querySelector(".js-carousel");
+
+    if (carousel) {
+        // 中に入っている元の画像をすべて取得
+        const images = carousel.querySelectorAll(".js-carousel__img");
+
+        // 取得した画像を順番にクローン（複製）して後ろに追加
+        images.forEach(img => {
+            const clone = img.cloneNode(true);
+            carousel.appendChild(clone);
+        });
+    }
+});
