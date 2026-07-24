@@ -342,7 +342,8 @@ p {
     /* ★画像の四隅を30px丸める */
 }
 
-テキストの文字間隔調整 .p-about__text {
+/* テキストの文字間隔調整 */
+.p-about__text {
     font-family: "Noto Sans JP", sans-serif;
     font-size: 16px;
     line-height: 2;
