@@ -395,7 +395,7 @@ p {
     width: max-content;
 
     /* ★30秒かけて左へ移動する無限ループアニメーション */
-    /* 速度を変えたい場合は、30s の数値を変更してください */
+    /* 速度を変えたい場合は、30s の数値を変更 */
     animation: loop-carousel 30s linear infinite;
 }
 
