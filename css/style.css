@@ -30,7 +30,7 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     /* 基本のフォント */
     width: 100%;
-    max-width: 1500px;
+    margin: 0;
 }
 
 /* 画像の表示設定（はみ出し防止） */
@@ -76,7 +76,7 @@ p {
     left: 0;
     width: 100%;
     z-index: 100;
-    max-width: 1500px;
+
 }
 
 /* ヘッダーの内側（ロゴとボタンを両端に配置） */
@@ -85,6 +85,7 @@ p {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    margin: 0 auto;
     /* ヘッダーの高さ */
     padding: 0 20px;
 }
@@ -233,6 +234,7 @@ p {
     padding: 50px 20px;
     min-height: 700px;
     max-width: 1500px;
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
@@ -262,8 +264,8 @@ p {
 .p-mv__inner-title {
     /* 極小画面では自動縮小し、最大で48pxになるよう調整（はみ出し対策） */
     font-size: clamp(32px, 11vw, 48px);
-    /* 英単語が枠を突き抜けるのを防ぐ保険 */
-    word-break: break-all;
+    /* break-wordに変更⇒（英単語が枠を突き抜けるのを防ぐ保険であるbreak-allだったのを変更）（*/
+    word-break: break-word;
     color: var(--accent);
     margin-bottom: 20px;
 }
@@ -299,6 +301,9 @@ p {
     display: flex;
     flex-direction: column;
     gap: 80px;
+
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 /* 背景色の出し分け（追加したクラスで設定） */
@@ -357,6 +362,9 @@ p {
 
     /* ★必須：画面外にはみ出たカルーセル画像を隠す */
     overflow: hidden;
+
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 /* 見出し */
@@ -483,6 +491,7 @@ p {
     align-items: center;
     max-width: 1500px;
     /* 全体の最大幅を1500pxに制限 */
+    margin: 0 auto;
 }
 
 /* 背景色の出し分け */
@@ -541,6 +550,8 @@ p {
     flex-direction: column;
     gap: 30px;
     /* footer内の要素間の余白 */
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 /* スマホ表示では縦並び */
