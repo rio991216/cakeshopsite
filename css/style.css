@@ -407,7 +407,7 @@ p {
 /* 画像共通設定（SP版: 1画面に1枚） */
 .p-gallery__img {
     /* コンテナの左右padding(20px + 20px = 40px)を引いた幅 = ぴったり1枚分 */
-    width: calc(100vw - 40px);
+    width: calc(50vw - 40px);
     max-width: calc(1500px - 40px);
     /* 全体幅が1500pxで止まる時の対策 */
     aspect-ratio: 1 / 1;
