@@ -177,7 +177,7 @@ p {
     left: 0;
     width: 50%;
     height: 60vh;
-    /* 画面に表示されるの高さ */
+    /* 画面に表示される高さ */
     background-color: var(--accent);
     padding-top: 20px;
     /* ヘッダーやボタンに被らないよう余白を確保 */
@@ -209,7 +209,7 @@ p {
 .l-header__nav-item a {
     color: var(--white);
     font-size: 1.25rem;
-    font-family: "Noto Sans JP", serif;
+    font-family: "Noto Sans JP", sans-serif;
     letter-spacing: 0.1em;
     display: block;
     padding: 10px 20px;
@@ -241,24 +241,6 @@ p {
     /* 横中央 */
     align-items: center;
     /* 縦中央 */
-    box-sizing: border-box;
-}
-
-.p-mv__inner {
-    width: 100%;
-    max-width: 800px;
-
-    background-color: rgba(255, 255, 255, 0.7);
-    /* 半透明の白 */
-    border-radius: 30px;
-    padding: 20px;
-    box-sizing: border-box;
-
-    text-align: center;
-
-    /* ガラス風 */
-    /* backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); */
 }
 
 .p-mv__inner-title {
@@ -450,7 +432,6 @@ p {
     /* テキストとアイコンの間隔 */
     width: 280px;
     height: 70px;
-    box-sizing: border-box;
 
     /* 角丸 */
     border-radius: 50px;
@@ -774,7 +755,6 @@ p {
         margin: 0 auto;
         /* 中央寄せ */
         width: 100%;
-        box-sizing: border-box;
     }
 
     /* 見出し（c-heading）の下余白50px & 左寄せ */
