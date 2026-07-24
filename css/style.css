@@ -304,7 +304,7 @@ p {
     margin: 0 auto;
 }
 
-/* 背景色の出し分け（追加したクラスで設定） */
+/* 背景色の出し分け */
 .p-about__bg-01 {
     background-color: var(--white);
 }
@@ -318,10 +318,10 @@ p {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    /* 大画像とサブセクション(テキスト＋小画像)の間隔を80pxに設定 */
+    /* 画像とサブセクション(テキスト＋小画像)の間隔を80pxに設定 */
 }
 
-/* テキストと小画像のレイアウト */
+/* テキストと画像のレイアウト */
 .p-about__subsection,
 .p-about__subsection--alter {
     display: flex;
@@ -367,11 +367,9 @@ p {
     justify-content: center;
     gap: 50px;
 
-    /* ★必須：画面外にはみ出たカルーセル画像を隠す */
+    /* 画面外にはみ出たカルーセル画像を隠す */
     overflow: hidden;
 
-    max-width: 1500px;
-    margin: 0 auto;
 }
 
 /* 見出し */
