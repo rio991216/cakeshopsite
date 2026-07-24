@@ -59,7 +59,7 @@ h3 {
 }
 
 p {
-    font-family: "Noto Sans JP", serif;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 /* ==========================================================================
@@ -508,8 +508,7 @@ p {
 
 /* 内部コンテンツの配置設定（縦並び・間隔80px） */
 .p-menu__section,
-.p-menu__section--alter,
-[p-menu__section--alter] {
+.p-menu__section--alter {
     display: flex;
     flex-direction: column;
     align-items: center;
