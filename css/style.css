@@ -296,6 +296,20 @@ p {
     /* パフォーマンス向上のため */
 }
 
+/* ====================
+   画像ホバーズーム
+   ==================== */
+/* 画像の拡大を枠の中に収める */
+.c-zoom-frame {
+    transition: transform 0.5s ease;
+}
+
+/* マウスオーバー時に少し拡大 */
+.c-zoom-frame:hover {
+    transform: scale(1.05);
+}
+
+
 /* 見出し */
 .c-heading {
     width: 100%;
