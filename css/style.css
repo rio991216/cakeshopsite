@@ -285,6 +285,16 @@ p {
     display: inline;
 }
 
+/* =========================================
+   各セクションの見出し部分
+========================================= */
+
+/* 見出し */
+.c-heading {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
 
 /* =========================================
    Aboutセクションのスタイル
@@ -372,12 +382,6 @@ p {
 
 }
 
-/* 見出し */
-.c-heading {
-    width: 100%;
-    max-width: 600px;
-    text-align: left;
-}
 
 /* カルーセルのトラック（動く部分） */
 .p-gallery__section {
@@ -512,12 +516,6 @@ p {
     gap: 50px;
 }
 
-/* 見出しを左寄せ */
-.c-heading {
-    width: 100%;
-    max-width: 600px;
-    text-align: left;
-}
 
 /* 内部コンテンツの配置設定（縦並び・間隔80px） */
 .p-menu__section,
@@ -695,6 +693,17 @@ p {
         display: none;
     }
 
+    /* ================
+       各セクション見出し部分
+       ================= */
+
+    /* 見出し（c-heading）の下余白50px & 左寄せ */
+    .c-heading {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+        margin-bottom: 50px;
+    }
 
     /* ================
        About部分
@@ -771,13 +780,6 @@ p {
         width: 100%;
     }
 
-    /* 見出し（c-heading）の下余白50px & 左寄せ */
-    .c-heading {
-        width: 100%;
-        max-width: 100%;
-        text-align: left;
-        margin-bottom: 50px;
-    }
 
     /* スマホ用CSSにあった #menu.p-menu のgap(50px)をクリア */
     #menu.p-menu {
