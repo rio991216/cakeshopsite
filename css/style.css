@@ -241,7 +241,6 @@ p {
     /* 横中央 */
     align-items: center;
     /* 縦中央 */
-    box-sizing: border-box;
 }
 
 .p-mv__inner {
@@ -252,7 +251,6 @@ p {
     /* 半透明の白 */
     border-radius: 30px;
     padding: 20px;
-    box-sizing: border-box;
 
     text-align: center;
 
@@ -449,7 +447,6 @@ p {
     /* テキストとアイコンの間隔 */
     width: 280px;
     height: 70px;
-    box-sizing: border-box;
 
     /* 角丸 */
     border-radius: 50px;
@@ -773,7 +770,6 @@ p {
         margin: 0 auto;
         /* 中央寄せ */
         width: 100%;
-        box-sizing: border-box;
     }
 
     /* 見出し（c-heading）の下余白50px & 左寄せ */
