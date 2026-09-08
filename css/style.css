@@ -251,7 +251,7 @@ p {
   メインビジュアル
 ==========================*/
 .p-mv {
-    background: url("../image/mv_1.png") center center / cover no-repeat;
+    background: url("../image/mv_1.jpg") center center / cover no-repeat;
 
     padding: 50px 20px;
     min-height: 700px;
