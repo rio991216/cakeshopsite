@@ -17,7 +17,7 @@ ul {
     margin: 0;
 }
 
-/* カラーコード設定変数（カスタムプロパティ） */
+/* カラーコード設定変数 */
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -25,15 +25,12 @@ ul {
     --bg: #E4D8CF;
 }
 
-/* ページ全体の基本スタイル */
 body {
     font-family: "Noto Sans JP", sans-serif;
-    /* 基本のフォント */
     width: 100%;
     margin: 0;
 }
 
-/* 画像の表示設定（はみ出し防止） */
 img {
     max-width: 100%;
     display: block;
@@ -66,12 +63,10 @@ p {
    ヘッダー＆ハンバーガーメニューの基本スタイル
    ========================================================================== */
 
-/* ヘッダー全体のスタイル */
 .l-header {
     background-color: var(--accent);
     color: var(--white);
     position: fixed;
-    /* 画面上部に固定 */
     top: 0;
     left: 0;
     width: 100%;
@@ -79,20 +74,16 @@ p {
 
 }
 
-/* ヘッダーの内側（ロゴとボタンを両端に配置） */
 .l-header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
     margin: 0 auto;
-    /* ヘッダーの高さ */
     padding: 0 20px;
-    /* ロゴの縮小基準にするためのコンテナ設定 */
     container-type: inline-size;
 }
 
-/* ロゴのスタイル */
 .l-header__logo {
     font-size: 1.5rem;
     font-weight: 500;
@@ -102,7 +93,6 @@ p {
 .l-header__logo a {
     color: var(--white);
     white-space: nowrap;
-    /* テキストを絶対に改行させない */
 }
 
 /* ======================
@@ -111,13 +101,7 @@ p {
 
 @media (max-width: 375px) {
     .l-header__logo {
-        /* 要素の横幅を「画面幅 - 30px」に制限 */
         width: calc(100vw - 30px);
-
-        /* 
-          文字サイズも横幅に連動して自動縮小（1行にぴったり収める）。
-          「Pâtisserie Yokohama Bay」の文字数に合わせて約6.6%（6.6cqw）に設定。
-        */
         font-size: 6.6cqw;
     }
 }
@@ -127,19 +111,16 @@ p {
    チェックボックスと三本線ボタン
    -------------------------------------------------------------------------- */
 
-/* チェックボックス本体は非表示にする */
 .l-header__menu-toggle {
     display: none;
 }
 
-/* ハンバーガーボタン（label） */
 .l-header__nav-btn {
     position: relative;
     width: 30px;
     height: 24px;
     cursor: pointer;
     z-index: 110;
-    /* メニューが広がっても上に乗るように調整 */
     display: flex;
     align-items: center;
 }
@@ -155,7 +136,6 @@ p {
     height: 2px;
     background-color: var(--white);
     transition: all 0.3s ease;
-    /* アニメーションを滑らかに */
 }
 
 /* 上下の線を配置 */
@@ -171,18 +151,16 @@ p {
    チェック時の三本線アニメーション（バツ印へ変化）
    -------------------------------------------------------------------------- */
 
-/* チェックが入ったら真ん中の線を透明にする */
 .l-header__menu-toggle:checked~.l-header__nav-btn span {
     background-color: transparent;
 }
 
-/* 上の線を45度回転 */
 .l-header__menu-toggle:checked~.l-header__nav-btn span::before {
     top: 0;
     transform: rotate(45deg);
 }
 
-/* 下の線をマイナス45度回転 */
+
 .l-header__menu-toggle:checked~.l-header__nav-btn span::after {
     top: 0;
     transform: rotate(-45deg);
@@ -192,42 +170,34 @@ p {
    スライドメニュー（ナビゲーション領域）
    -------------------------------------------------------------------------- */
 
-/* メニューの初期状態（非表示・少し上に隠す） */
 .l-header__nav {
     position: fixed;
     top: 70px;
     left: 0;
     width: 50%;
     height: 60vh;
-    /* 画面に表示されるの高さ */
     background-color: var(--accent);
     padding-top: 20px;
-    /* ヘッダーやボタンに被らないよう余白を確保 */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
-    /* 上から少し落ちてくるエフェクト用 */
     transition: all 0.4s ease;
     z-index: 105;
 }
 
-/* チェックが入ったらメニューを表示 */
 .l-header__menu-toggle:checked~.l-header__nav {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-/* ナビゲーションリストのレイアウト */
 .l-header__nav-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    /* メニュー項目同士の間隔 */
 }
 
-/* メニュー内のリンク用スタイル */
 .l-header__nav-item a {
     color: var(--white);
     font-size: 1.25rem;
@@ -244,9 +214,6 @@ p {
 
 
 
-/* ==========================================================================
-   MVの基本スタイル
-   ========================================================================== */
 /*==========================
   メインビジュアル
 ==========================*/
@@ -257,40 +224,27 @@ p {
     min-height: 700px;
     max-width: 1500px;
     margin: 0 auto;
-
     display: flex;
     justify-content: center;
-    /* 横中央 */
     align-items: center;
-    /* 縦中央 */
 }
 
 .p-mv__inner {
     width: 100%;
     max-width: 800px;
-
     background-color: rgba(255, 255, 255, 0.7);
-    /* 半透明の白 */
     border-radius: 30px;
     padding: 20px;
-
     text-align: center;
-
-    /* ガラス風 */
-    /* backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); */
 }
 
 .p-mv__inner-title {
-    /* 極小画面では自動縮小し、最大で48pxになるよう調整（はみ出し対策） */
     font-size: clamp(32px, 11vw, 48px);
-    /* break-wordに変更⇒（英単語が枠を突き抜けるのを防ぐ保険であるbreak-allだったのを変更）（*/
     word-break: break-word;
     color: var(--accent);
     margin-bottom: 20px;
 }
 
-/* タイトルの改行 */
 .p-mv__inner-title-sp-only-br {
     display: inline;
 }
@@ -302,7 +256,6 @@ p {
     margin: 0;
 }
 
-/* テキストの改行 */
 .p-mv__inner-text-sp-only-br {
     display: inline;
 }
@@ -310,36 +263,31 @@ p {
 /* =========================================
    各セクションの共通部分（About～Gallery～Menu）
 ========================================= */
-/* フェードイン時の設定 */
-/* JSが効く要素の初期状態（最初は消しておき、下に移しておく） */
+
 .js-fadein {
     opacity: 0;
     will-change: opacity, transform, filter;
-    /* パフォーマンス向上のため */
 }
 
 /* ====================
    画像ホバーズーム
    ==================== */
-/* 画像の拡大を枠の中に収める */
+
 .c-zoom-frame {
     transition: transform 0.5s ease;
 }
 
-/* マウスオーバー時に少し拡大 */
 .c-zoom-frame:hover {
     transform: scale(1.05);
 }
 
 
-/* 見出し */
 .c-heading {
     width: 100%;
     max-width: 600px;
     text-align: left;
 }
 
-/* 背景色の出し分け */
 .p-menu__bg-01 {
     background-color: var(--bg);
 }
@@ -352,21 +300,15 @@ p {
    Aboutセクションのスタイル
 ========================================= */
 
-/* 共通の大枠スタイル */
 .p-about {
-    /* 上下80px 左右20pxのpadding */
     padding: 80px 20px;
-
-    /* 見出しとセクションの間隔を80pxにする */
     display: flex;
     flex-direction: column;
     gap: 80px;
-
     max-width: 1500px;
     margin: 0 auto;
 }
 
-/* 背景色の出し分け */
 .p-about__bg-01 {
     background-color: var(--white);
 }
@@ -375,36 +317,28 @@ p {
     background-color: var(--bg);
 }
 
-/* 各セクション内のレイアウト */
+
 .p-about__section {
     display: flex;
     flex-direction: column;
     gap: 80px;
-    /* 画像とサブセクション(テキスト＋小画像)の間隔を80pxに設定 */
 }
 
-/* テキストと画像のレイアウト */
 .p-about__subsection,
 .p-about__subsection--alter {
     display: flex;
     flex-direction: column;
-    /* HTMLの記述通り（大画像→テキスト→小画像）の順番で表示 */
     gap: 80px;
-    /* テキストと小画像の間隔を80pxに設定 */
 }
 
-/* 画像の共通スタイル（拡大縮小・角丸） */
 .p-about__img--large,
 .p-about__img--small {
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* 画像の縦横比を保ったまま綺麗に収める */
     border-radius: 30px;
-    /* ★画像の四隅を30px丸める */
 }
 
-/* テキストの文字間隔調整 */
 .p-about__text {
     font-family: "Noto Sans JP", sans-serif;
     font-size: 16px;
@@ -416,55 +350,36 @@ p {
 /* =========================================
    Galleryのスタイル
 ========================================= */
-/* セクション全体（コンテナ） */
+
 .p-gallery {
     padding: 80px 20px;
     max-width: 1500px;
     margin: 0 auto;
-    /* 中央に配置 */
     background-color: var(--white);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-
-    /* 画面外にはみ出たカルーセル画像を隠す */
     overflow: hidden;
 
 }
 
 
-/* カルーセルのトラック（動く部分） */
 .p-gallery__section {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 0;
-    /* 画像をピッタリくっつける */
-
-    /*子要素（全画像）の合計幅まで親要素を無理やり広げる */
     width: max-content;
-
-    /* ★30秒かけて左へ移動する無限ループアニメーション */
-    /* 速度を変えたい場合は、30s の数値を変更 */
     animation: loop-carousel 30s linear infinite;
 }
 
-/* ★ホバー時にアニメーションを一時停止（お好みで削除可能） */
-/* .p-gallery__section:hover {
-    animation-play-state: paused;
-} */
-
-/* 画像共通設定（SP版: 1画面に2枚） */
 .p-gallery__img {
     /* コンテナの左右padding(20px + 20px = 40px)を引いた幅 = ぴったり2枚分 */
     width: calc(50vw - 40px);
-
     aspect-ratio: 1 / 1;
     object-fit: cover;
     flex-shrink: 0;
-    /* flex内で画像が潰れないようにする */
 }
 
 /* =========================================
@@ -473,12 +388,10 @@ p {
 @keyframes loop-carousel {
     0% {
         transform: translateX(0);
-        /* 最初は0%位置から */
     }
 
     100% {
         transform: translateX(-50%);
-        /* JSで2倍にした要素の半分まで移動してループ */
     }
 }
 
@@ -488,84 +401,66 @@ p {
 /* ===============
    ボタンのスタイル
 =============== */
-/* ボタンの外枠 */
+
 .c-btn {
     display: inline-block;
 }
 
-/* ボタン本体（リンク要素） */
+
 .c-btn--icon-link {
-    /* サイズと配置 */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    /* テキストとアイコンの間隔 */
     width: 280px;
     height: 70px;
-
-    /* 角丸 */
     border-radius: 50px;
-
-    /* フォント指定 */
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-
-    /* カラー指定（通常時） */
     color: var(--white);
     background-color: var(--accent);
     border: 1px solid var(--accent);
-
-    /* アニメーションのスピード */
     transition: all 0.15s ease-out;
 }
 
-/* SVGアイコンのサイズ・整列 */
 .c-btn--icon {
     width: 1.2em;
     height: 1.2em;
     flex-shrink: 0;
 }
 
-/* ホバー時のスタイル */
 .c-btn--icon-link:hover {
     color: var(--accent);
     background-color: var(--white);
     border-color: var(--accent);
 }
 
-/* クリック（押し込んだ）時の動作 */
 .c-btn--icon-link:active {
     transform: scale(0.97);
-    /* 97%の大きさに少しキュッと縮む */
     opacity: 0.9;
-    /* 少しだけ透明にして押した感を強調 */
+
 }
 
 /* ===============
    Menu全体のスタイル
 ================ */
-/* セクション全体の余白（上下80px、左右20px） */
 .p-menu {
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1500px;
-    /* 全体の最大幅を1500pxに制限 */
     margin: 0 auto;
 }
 
 
-/* Menu01: 見出し（c-heading）とコンテンツの間隔（50px） */
 #menu.p-menu {
     gap: 50px;
 }
 
 
-/* 内部コンテンツの配置設定（縦並び・間隔80px） */
 .p-menu__section,
 .p-menu__section--alter {
     display: flex;
@@ -575,91 +470,68 @@ p {
     width: 100%;
 }
 
-/* 4つの画像を共通のサイズに固定 */
 .p-menu__img {
     width: 100%;
     max-width: 600px;
-    /* 横幅の最大サイズ（必要に応じて調整） */
     aspect-ratio: 1 / 1;
-    /* 画像の比率を正方形(1:1)に統一（4/3 や 16/9 に調整も可能） */
     object-fit: cover;
-    /* 縦横比を崩さず、指定サイズいっぱいにトリミング表示 */
     border-radius: 30px;
-    /* 角丸30px */
+
 }
 
 /* =========================================
    フッターのスタイル（Access）
 ========================================= */
 
-/* 【１】footer部分 */
 .l-footer {
     padding: 70px 20px 50px;
     background-color: var(--accent);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    /* footer内の要素間の余白 */
     max-width: 1500px;
     margin: 0 auto;
 }
 
-/* スマホ表示では縦並び */
 .l-footer__info {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    /* リスト・画像グループ と マップ の間隔 */
 }
 
-/* 左側ラッパー（スマホ時は上下に並ぶ） */
 .l-footer__info-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    /* リストと画像の間の間隔 */
 }
 
-/* 【２】リスト部分 */
 .l-footer__info-list {
     font-family: "Noto Sans JP", sans-serif;
     color: var(--white);
     margin: 0;
-
-    /* Gridを使って2列にする（左が項目、右が内容） */
     display: grid;
     grid-template-columns: max-content 1fr;
-    /* 左側は文字の長さに合わせ、右側は残り全幅 */
     column-gap: 20px;
-    /* 項目と内容の間の左右の隙間 */
     row-gap: 15px;
-    /* 上下の行の隙間 */
     align-items: start;
-    /* Topの位置を揃える */
+
 }
 
 .l-footer__info-item-title,
 .l-footer__info-item-content {
     margin: 0;
     text-align: left;
-    /* 左揃え */
     line-height: 1.6;
 }
 
-/* 【３】画像部分（HTMLの修正により自動的にリストの下に配置されます） */
 .l-footer__img {
     width: 100%;
-    /* max-width: 400px; を削除します */
     aspect-ratio: 4 / 3;
-    /* マップと同じ「横4：縦3」の比率に設定 */
     object-fit: cover;
-    /* 画像が歪まないように枠に合わせてトリミング */
 }
 
-/* 【４】マップ部分 */
 .l-footer__map {
     width: 100%;
-    /* スマホ表示時のマップの縦横比を確保 */
     aspect-ratio: 4 / 3;
 }
 
@@ -669,12 +541,10 @@ p {
     display: block;
 }
 
-/* 【５】コピーライト部分 */
 .l-footer__copyright {
     display: block;
     text-align: center;
     color: var(--white);
-    /* 背景に合わせて文字色を指定 */
 }
 
 
@@ -686,57 +556,41 @@ p {
     /* =============
        ヘッダー部分
        ============= */
-    /* ハンバーガーボタン（三本線）を非表示にする */
+
     .l-header__nav-btn {
         display: none;
     }
 
-    /* ナビゲーション領域をヘッダー内の正しい位置（ロゴの右側）に戻す */
+
     .l-header__nav {
         position: static;
-        /* スマホ用の画面固定（fixed）を解除 */
         width: auto;
-        /* 幅50%を解除 */
         height: auto;
-        /* 高さ60vhを解除 */
         padding-top: 0;
-        /* Aboutが消える原因だった上の余白100pxをリセット */
         opacity: 1;
-        /* 常に表示（透明度を戻す） */
         visibility: visible;
-        /* 常に表示 */
         transform: none;
-        /* スマホ用のアニメーション移動を解除 */
         background-color: transparent;
-        /* ヘッダーと同色なので透明にして馴染ませる */
     }
 
-    /* リストを縦並びから横並びに変更する */
     .l-header__nav-list {
         flex-direction: row;
-        /* column（縦）からrow（横）へ変更 */
         gap: 20px;
-        /* メニュー項目間の余白（お好みで調整してください） */
     }
 
-    /* PC用に文字サイズや余白の微調整 */
     .l-header__nav-item a {
         font-size: 1rem;
-        /* PC用に少し文字を小さく調整 */
         padding: 5px 10px;
-        /* クリックエリアの調整 */
     }
 
     /* =============
        MV部分
        ============= */
 
-    /* タイトルの改行とる */
     .p-mv__inner-title-sp-only-br {
         display: none;
     }
 
-    /* テキストの改行とる */
     .p-mv__inner-text-sp-only-br {
         display: none;
     }
@@ -745,7 +599,6 @@ p {
        各セクション見出し部分
        ================= */
 
-    /* 見出し（c-heading）の下余白50px & 左寄せ */
     .c-heading {
         width: 100%;
         max-width: 100%;
@@ -756,45 +609,31 @@ p {
     /* ================
        About部分
        ================= */
-    /* セクション全体の余白を変更 */
     .p-about {
         padding: 100px 90px;
-        /* 上下100px 左右90px */
         gap: 50px;
-        /* 見出し(h3)とセクションの間隔を50pxに設定 */
     }
 
-    /* 2カラム（左右半分）のレイアウト設定 */
     .p-about__section {
         flex-direction: row;
         align-items: stretch;
-        /* ★左右のカラムの高さを揃える（等高） */
         gap: 60px;
-        /* 左右カラム間の余白 */
     }
 
-    /* 左側（または右側）の大画像 */
     .p-about__img--large {
         width: calc(50% - 30px);
-        /* カラム幅50%（gapの半分を引いたサイズ） */
         height: 100%;
-        /* ★反対側の高さに合わせて縦いっぱいに伸ばす */
         object-fit: cover;
-        /* ★縦横比を維持したまま綺麗に収める */
     }
 
-    /* 右側（または左側）のテキストと小画像のブロック */
     .p-about__subsection,
     .p-about__subsection--alter {
         width: calc(50% - 30px);
-        /* カラム幅50% */
         display: flex;
         flex-direction: column;
         gap: 90px;
-        /* 【１】テキスト と 【２】小画像 の間隔を90pxに設定 */
     }
 
-    /* About02の配置変更（画像を右、テキスト群を左） */
     .p-about__bg-02 .p-about__section {
         flex-direction: row-reverse;
     }
@@ -804,13 +643,10 @@ p {
        Gallery部分
        ================= */
     .p-gallery {
-        /* PC版の全体の余白 */
         padding: 100px 90px;
     }
 
-    /* PC版: 1画面に3枚 */
     .p-gallery__img {
-        /* コンテナの左右padding(90px + 90px = 180px)を引いて、3等分する */
         width: calc((100vw - 180px) / 3);
         max-width: calc((1500px - 180px) / 3);
     }
@@ -819,22 +655,19 @@ p {
     /* ================
        Menu部分
        ================= */
-    /* セクション全体の余白設定（上下100px、左右90px / 最大幅1500px） */
     .p-menu {
         padding: 100px 90px;
         max-width: 1500px;
         margin: 0 auto;
-        /* 中央寄せ */
         width: 100%;
     }
 
 
-    /* スマホ用CSSにあった #menu.p-menu のgap(50px)をクリア */
     #menu.p-menu {
         gap: 0;
     }
 
-    /* メニューコンテンツ領域（ボタン上部＋画像左右のレイアウト設定） */
+
     .p-menu__section {
         display: flex;
         flex-wrap: wrap;
@@ -845,30 +678,23 @@ p {
         gap: 0;
     }
 
-    /* ボタンの親要素領域（幅100%確保 ＆ 下余白20px） */
     .p-menu__section>.c-btn {
         width: 100%;
         margin-bottom: 20px;
-        /* ボタンの下の余白 20px */
+
     }
 
-    /* ボタン本体のサイズは標準のまま固定（変形・引き伸ばしを防止） */
     .c-btn--icon-link {
         width: 280px;
         height: 70px;
         flex-shrink: 0;
     }
 
-    /* 左右半分（50%ずつ）に画像を並べる設定 */
     .p-menu__img {
         width: calc(50% - 15px);
-        /* 50%から要素間の隙間(30px)の半分を差し引き */
         max-width: none;
-        /* スマホ用の最大幅制限(600px)を解除 */
         aspect-ratio: 1 / 1;
-        /* 正方形に統一 */
         object-fit: cover;
-        /* 画像の歪みを防止 */
     }
 
 
@@ -876,39 +702,30 @@ p {
        フッター部分
        ============= */
 
-    /* 【６】paddingの変更 */
     .l-footer {
         padding: 100px 90px 50px;
         gap: 0;
-        /* PC版では個別にマージンを設定するためリセット */
     }
 
-    /* 【７】【８】【９】画面左側と右側の横並びレイアウト */
     .l-footer__info {
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         gap: 20px;
-        /* ★ここを 40px から 20px に狭くする（お好みで変更可） */
     }
 
-    /* 左側のコンテンツ（リストと画像） */
     .l-footer__info-left {
         width: calc(50% - 10px);
-        /* ★隙間(20px)の半分を引いてピッタリ収める */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
-    /* 右側のコンテンツ（マップ） */
     .l-footer__map {
         width: calc(50% - 10px);
-        /* ★隙間(20px)の半分を引いてピッタリ収める */
         aspect-ratio: auto;
     }
 
-    /* 【10】コピーライトを最下部センター、上のコンテンツと50px間隔 */
     .l-footer__copyright {
         margin-top: 50px;
     }

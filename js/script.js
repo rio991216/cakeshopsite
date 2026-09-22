@@ -27,14 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Galleryカルーセル
 // ーーーーーーーーーーーーーーーー
 document.addEventListener("DOMContentLoaded", () => {
-    // カルーセルの親要素を取得
     const carousel = document.querySelector(".js-carousel");
 
     if (carousel) {
-        // 中に入っている元の画像をすべて取得
         const images = carousel.querySelectorAll(".js-carousel__img");
-
-        // 取得した画像を順番にクローン（複製）して後ろに追加
         images.forEach(img => {
             const clone = img.cloneNode(true);
             carousel.appendChild(clone);
@@ -51,12 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const animateFade = (entries, obs) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // 要素が画面に入ったらアニメーションを実行
                 entry.target.animate(
                     {
                         opacity: [0, 1],
                         filter: ['blur(0.4rem)', 'blur(0)'],
-                        transform: ['translateY(4rem)', 'translateY(0)'] // 互換性の高いtransformプロパティを使用
+                        transform: ['translateY(4rem)', 'translateY(0)']
                     },
                     {
                         duration: 2000,
@@ -64,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         fill: 'forwards'
                     }
                 );
-                // 一度アニメーションした要素は監視を解除
+
                 obs.unobserve(entry.target);
             }
         });
